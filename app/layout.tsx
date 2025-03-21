@@ -1,4 +1,5 @@
 import RootProviders from "@/components/providers/root-provider";
+import { Toaster } from "@/components/ui/sonner";
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
@@ -27,9 +28,9 @@ export default function RootLayout({
         className="dark"
         style={{ colorScheme: "dark" }}
         suppressHydrationWarning
-        cz-shortcut-listen="true"
       >
         <body className={`${poppins.className} antialiased`}>
+          <Toaster richColors position="bottom-right" />
           <RootProviders>{children}</RootProviders>
         </body>
       </html>
